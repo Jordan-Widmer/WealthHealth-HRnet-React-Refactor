@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 // Setting up initial state
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 
 // Employees slice for Redux Toolkit
 const employeesSlice = createSlice({
-  name: 'employees',
+  name: "employees",
   initialState,
   reducers: {
     // Action for adding a new employee

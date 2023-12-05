@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter, Outlet } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from "react";
 
 const Root = () => {
   return (
@@ -41,8 +41,7 @@ const router = createBrowserRouter([
             <EmployeesList />
           </Suspense>
         ),
-      }
-       
+      },
     ],
   },
 ]);

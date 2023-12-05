@@ -1,6 +1,5 @@
 const Table = () => {
-    return <></>;
-  };
-  
-  export default Table;
-  
+  return <></>;
+};
+
+export default Table;

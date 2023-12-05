@@ -4,7 +4,6 @@
   justify-content: center;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -23,5 +22,5 @@ label {
 }
 
 .errorMessage {
-color: red;
+  color: red;
 }
