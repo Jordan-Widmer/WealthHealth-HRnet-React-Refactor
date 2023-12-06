@@ -1,0 +1,120 @@
+form {
+  background-color: #fff; 
+  color: #333;
+  border-radius: 8px; 
+  /* padding: 2em; */
+  max-width: 1000px;
+  margin: 50px auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1); 
+}
+
+.flexSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin-bottom: 2em;
+}
+
+.background-employee {
+  display: flex;
+  padding-left: 48px;
+  background-color: #96b023;
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+
+.labelContainer {
+  margin-bottom: 1em;
+  text-align: left; 
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: #333;
+  font-size: 24px;
+}
+
+.fieldset {
+  border: none;
+}
+
+.input,
+.select-input {
+  width: 400px;
+  padding: 15px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  margin-bottom: 1em;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 0.85em;
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+
+.submit {
+  background-color: #96b023; 
+  color: white;
+  width: 400px;
+  border: none;
+  padding: 9.5px 30px;
+  margin-bottom: 48px;
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #607118; 
+}
+
+.select-input__control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.select-input__control--is-focused {
+  border-color: #9b59b6; 
+}
+
+.select-input__value-container {
+  padding: 10px;
+}
+
+.errorInput {
+  border-color: #e74c3c; 
+}
+
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+    padding: 1em;
+  }
+
+  main {
+    padding: 0;
+  }
+}
+
+main h1 {
+  font-size: 2em; 
+  margin-top: 0.5em; 
+  font-weight: 600;
+}
+
+main a {
+  display: block; 
+  margin: 20px auto; 
+  width: fit-content; 
+}
+
+section h2 {
+  font-size: 1.5em; 
+  margin-top: 1em; 
+}

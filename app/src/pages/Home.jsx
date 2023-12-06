@@ -14,7 +14,7 @@ const Home = () => {
       <NavLink to="/employees-list">View Current Employees</NavLink>
       <section>
         <h2>Create Employee</h2>
-        <Suspense fallback={<div>Loading Form...</div>}>
+        <Suspense fallback={<div className="loading-container">Loading Form...</div>}>
           <Form setModalIsOpen={setModalIsOpen} />
         </Suspense>
       </section>

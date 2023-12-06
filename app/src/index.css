@@ -1,26 +1,40 @@
-.title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body, html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI","Noto Sans TC","Microsoft JhengHei", "Meiryo UI";
+  background-color: #f2f2f2; 
+  color: #333;
+  font-size: 16px;
+  height: 100%;
 }
 
-label {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 10px;
+main {
+  padding: 20px;
+  text-align: center;
 }
 
-.address {
-  margin-top: 10px;
+/* Navigation link */
+a {
+  color: #9b59b6;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 2px solid #9b59b6;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.errorMessage {
-  color: red;
+a:hover {
+  background-color: #9b59b6;
+  color: white;
+}
+
+h1, h2 {
+  color: #FFF; 
+  margin-bottom: 0.5em;
 }

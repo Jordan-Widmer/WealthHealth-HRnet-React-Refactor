@@ -12,9 +12,9 @@ const Root = () => {
 };
 
 // Lazy load the ErrorPage, Home, and EmployeesList components
-const ErrorPage = lazy(() => import("../pages/ErrorPage"));
-const Home = lazy(() => import("../pages/Home"));
-const EmployeesList = lazy(() => import("../pages/EmployeesList"));
+const ErrorPage = lazy(() => import("../pages/errorPage"));
+const Home = lazy(() => import("../pages/home"));
+const EmployeesList = lazy(() => import("../pages/employeesList"));
 
 const router = createBrowserRouter([
   {
