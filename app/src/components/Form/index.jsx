@@ -1,8 +1,7 @@
-import "./styles.css";
 import Select from "react-select";
 import { useForm, useController } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { addToEmployeesList } from "../../store/employeesSlice";
+import { addToEmployeesList } from "../../store/employeeDataSlice";
 import { states, departments } from "../../variables";
 import { useCallback } from "react";
 

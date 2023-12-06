@@ -1,11 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import employeesReducer from './employeesSlice';
-import storage from 'redux-persist/lib/storage';
-import { persistStore, persistReducer } from 'redux-persist';
+import { configureStore } from "@reduxjs/toolkit";
+import employeesReducer from "./employeeDataSlice";
+import storage from "redux-persist/lib/storage";
+import { persistStore, persistReducer } from "redux-persist";
 
 // Defining redux-persist configuration
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage,
 };
 
@@ -18,7 +18,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE', 'persist/PAUSE', 'persist/PERSIST', 'persist/PURGE', 'persist/REGISTER'],
+        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE", "persist/PAUSE", "persist/PERSIST", "persist/PURGE", "persist/REGISTER"],
       },
     }),
 });
