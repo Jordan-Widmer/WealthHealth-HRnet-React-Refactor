@@ -24,8 +24,9 @@ const Form = ({ setModalIsOpen }) => {
     control: (provided) => ({
       ...provided,
       width: "400px",
-      border: "2px solid #6B7280",
-      borderRadius: "5px",
+      border: "none",
+      background: "#E5EEF4",
+      borderRadius: "none",
       marginBottom: "2.2em",
       padding: "4.5px",
       boxShadow: "none",
@@ -34,8 +35,9 @@ const Form = ({ setModalIsOpen }) => {
 
   const customInputStyles = {
     width: "400px",
-    border: "2px solid #6B7280",
-    borderRadius: "5px",
+    border: "none",
+    background: "#E5EEF4",
+    borderRadius: "none",
     padding: "12px",
   };
 

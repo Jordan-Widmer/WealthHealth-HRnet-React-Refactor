@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <main>
-      <h1>HRnet</h1>
+      <h1 className="title">HRnet</h1>
       <NavLink to="/employees-list">View Current Employees</NavLink>
       <section>
         {/* <h2>Create Employee</h2> */}

@@ -43,21 +43,30 @@ main {
   text-align: center;
 }
 
+.title {
+  margin-top: 48px;
+  color: white;
+  font-size: 48px;
+}
+
 /* Navigation link */
 a {
-  color: #9b59b6;
   text-decoration: none;
   padding: 10px 15px;
-  border-radius: 5px;
-  border: 2px solid #9b59b6;
+  border-radius: none;
+  font-size: 0.875rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);
+  background-image: white;
+  background-size: 200% auto; /* Taille de fond étendue pour permettre l'animation */
+  transition: background-position 0.3s ease; /* Transition simplifiée */
+  font-family: inherit;
   display: inline-block;
   margin-top: 20px;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
 }
 
 a:hover {
-  background-color: #9b59b6;
-  color: white;
+  background-position: right center; /* Changement de position au survol */
 }
 
 h1,
