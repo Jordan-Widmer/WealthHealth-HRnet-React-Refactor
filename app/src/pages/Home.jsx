@@ -13,7 +13,7 @@ const Home = () => {
       <h1>HRnet</h1>
       <NavLink to="/employees-list">View Current Employees</NavLink>
       <section>
-        <h2>Create Employee</h2>
+        {/* <h2>Create Employee</h2> */}
         <Suspense fallback={<div className="loading-container">Loading Form...</div>}>
           <Form setModalIsOpen={setModalIsOpen} />
         </Suspense>

@@ -6,7 +6,6 @@ import { addToEmployeesList } from "../../store/employeeDataSlice";
 import { states, departments } from "../../variables";
 import { useCallback } from "react";
 
-// eslint-disable-next-line react/prop-types
 const Form = ({ setModalIsOpen }) => {
   const dispatch = useDispatch();
   const { register, handleSubmit, control, formState: { errors } } = useForm();
@@ -15,93 +14,98 @@ const Form = ({ setModalIsOpen }) => {
   const { field: departmentField } = useController({ name: "department", control });
 
   const subForm = useCallback((data) => {
-      if (data.department && data.state) {
-        setModalIsOpen(true);
-        dispatch(addToEmployeesList(data));
-      }
+    if (data.department && data.state) {
+      setModalIsOpen(true);
+      dispatch(addToEmployeesList(data));
+    }
   }, [setModalIsOpen, dispatch]);
-
 
   const customSelectStyles = {
     control: (provided) => ({
       ...provided,
-      width: "400px", // Largeur fixe du Select
-      border: "1px solid #ccc", // Bordure pour correspondre aux autres champs
-      borderRadius: "5px", // Rayon de la bordure
-      marginBottom: "2.6em", // Marge en bas
-      padding: "5.83px", // Padding intérieur
+      width: "400px",
+      border: "2px solid #6B7280",
+      borderRadius: "5px",
+      marginBottom: "2.2em",
+      padding: "4.5px",
       boxShadow: "none",
     }),
   };
 
+  const customInputStyles = {
+    width: "400px",
+    border: "2px solid #6B7280",
+    borderRadius: "5px",
+    padding: "12px",
+  };
+
   return (
     <form onSubmit={handleSubmit(subForm)} aria-labelledby="employee-form">
-      <div className="background-employee">
-        <h1 id="employee-form">Employee Form</h1>
-      </div>
+      <h1 id="employee-form">Employee Form</h1>
       <div className="flexSection">
         <div>
+          {/* First Name */}
           <div className="labelContainer">
             <label htmlFor="firstname">First Name</label>
             <input
               className={errors.firstname ? "errorInput" : "input"}
+              placeholder="Enter first name"
               id="firstname"
               type="text"
-              {...register("firstname", {
-                required: "Please provide this field",
-              })}
+              {...register("firstname", { required: "Please provide this field" })}
             />
             <p className="errorMessage">{errors.firstname?.message}</p>
           </div>
 
+          {/* Last Name */}
           <div className="labelContainer">
             <label htmlFor="lastname">Last Name</label>
             <input
               className={errors.lastname ? "errorInput" : "input"}
+              placeholder="Enter first name"
               id="lastname"
               type="text"
-              {...register("lastname", {
-                required: "Please provide this field",
-              })}
+              {...register("lastname", { required: "Please provide this field" })}
             />
             <p className="errorMessage">{errors.lastname?.message}</p>
           </div>
 
+          {/* Birth Date */}
           <div className="labelContainer">
             <label htmlFor="birthdate">Birth Date</label>
             <input
-              type="date"
-              id="birthdate"
+              style={customInputStyles}
               className={errors.birthdate ? "errorInput" : "input"}
-              {...register("birthdate", {
-                required: "Please provide this field",
-              })}
+              id="birthdate"
+              type="date"
+              {...register("birthdate", { required: "Please provide this field" })}
             />
             <p className="errorMessage">{errors.birthdate?.message}</p>
           </div>
 
+          {/* Start Date */}
           <div className="labelContainer">
             <label htmlFor="startDate">Start Date</label>
             <input
+              style={customInputStyles}
               type="date"
               id="startDate"
               className={errors.startDate ? "errorInput" : "input"}
-              {...register("startDate", {
-                required: "Please provide this field",
-              })}
+              {...register("startDate", { required: "Please provide this field" })}
             />
             <p className="errorMessage">{errors.startDate?.message}</p>
           </div>
         </div>
 
         <div>
+          {/* Address Fieldset */}
           <fieldset className="fieldset">
-            {/* <legend>Address</legend> */}
-
+            {/* Street */}
             <div className="labelContainer">
               <label htmlFor="street">Street</label>
               <input
                 className={errors.street ? "errorInput" : "input"}
+                placeholder="Enter street name"
                 id="street"
                 type="text"
                 {...register("street", {
@@ -115,10 +119,12 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.street?.message}</p>
             </div>
 
+            {/* City */}
             <div className="labelContainer">
               <label htmlFor="city">City</label>
               <input
                 className={errors.city ? "errorInput" : "input"}
+                placeholder="Enter city name"
                 id="city"
                 type="text"
                 {...register("city", { required: "Please provide this field" })}
@@ -126,11 +132,12 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.city?.message}</p>
             </div>
 
+            {/* State */}
             <div className="labelContainer">
               <label htmlFor="state-select">State</label>
               <Select
                 inputId="state-select"
-                styles={customSelectStyles} // Appliquez les styles personnalisés ici
+                styles={customSelectStyles}
                 getOptionLabel={(option) => option.name}
                 getOptionValue={(option) => option.abbreviation}
                 isClearable
@@ -140,10 +147,12 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.state?.message}</p>
             </div>
 
+            {/* Zip Code */}
             <div className="labelContainer">
               <label htmlFor="zip-code">Zip Code</label>
               <input
                 className={errors.zipCode ? "errorInput" : "input"}
+                placeholder="Enter Zip code name"
                 id="zipCode"
                 type="text"
                 {...register("zipCode", {
@@ -158,11 +167,12 @@ const Form = ({ setModalIsOpen }) => {
             </div>
           </fieldset>
 
+          {/* Department */}
           <div className="labelContainer">
             <label htmlFor="department-select">Department</label>
             <Select
               inputId="department-select"
-              styles={customSelectStyles} // Appliquez les styles personnalisés ici
+              styles={customSelectStyles}
               isClearable
               options={departments}
               {...departmentField}
@@ -172,9 +182,7 @@ const Form = ({ setModalIsOpen }) => {
         </div>
       </div>
 
-      <button type="submit" className="submit">
-        Save
-      </button>
+      <button type="submit" className="submit">Create Employee!</button>
     </form>
   );
 };

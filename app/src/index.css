@@ -1,15 +1,41 @@
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("/Lato-Regular.woff2") format("woff2"),
+    url("/Lato-Regular.woff") format("woff"),
+    url("/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("/Lato-Bold.woff2") format("woff2"),
+    url("/Lato-Bold.woff") format("woff"),
+    url("/Lato-Bold.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI","Noto Sans TC","Microsoft JhengHei", "Meiryo UI";
-  background-color: #f2f2f2; 
-  color: #333;
-  font-size: 16px;
+body,
+html {
+  font-family: "Lato-Regular", sans-serif;
+  background-image: linear-gradient( 135deg, #96B021 10%, #768927 100%);  font-size: 16px;
   height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato-Bold", sans-serif;
+}
+
+.button {
+  font-family: "Lato-Bold", sans-serif;
 }
 
 main {
@@ -34,7 +60,8 @@ a:hover {
   color: white;
 }
 
-h1, h2 {
-  color: #FFF; 
+h1,
+h2 {
+  color: #374151;
   margin-bottom: 0.5em;
 }
