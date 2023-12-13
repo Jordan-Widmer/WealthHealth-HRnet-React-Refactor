@@ -5,12 +5,19 @@ const initialState = {
   employees: [],
 };
 
-// Employees slice for Redux Toolkit
+/**
+ * Redux slice for managing employees.
+ * @type {import("@reduxjs/toolkit").Slice}
+ */
 const employeesSlice = createSlice({
   name: "employees",
   initialState,
   reducers: {
-    // Action for adding a new employee
+    /**
+     * Action for adding a new employee.
+     * @param {Object} state - The current state.
+     * @param {Object} action - The action containing the new employee data.
+     */
     addToEmployeesList(state, action) {
       const newEmployee = action.payload;
       state.employees.push(newEmployee);

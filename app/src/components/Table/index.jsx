@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import React, { useMemo } from "react";
 import { MaterialReactTable } from "material-react-table";
 
+/**
+ * This component represents a table for displaying employee data.
+ * @param {Object} props - The component's props.
+ * @param {Array} props.list - An array of employee data to be displayed in the table.
+ * @returns {JSX.Element} The JSX element representing the employee data table.
+ */
 const Table = ({ list }) => {
   const columns = useMemo(
     () => [

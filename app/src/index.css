@@ -41,6 +41,8 @@ h6 {
 main {
   padding: 20px;
   text-align: center;
+  background-image: linear-gradient( 135deg, #96B021 10%, #768927 100%);  font-size: 16px;
+  height: 100%;
 }
 
 .title {

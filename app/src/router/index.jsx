@@ -1,8 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter, Outlet } from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
 import React, { lazy, Suspense } from "react";
 
+/**
+ * This component represents the root of your application.
+ * @returns {JSX.Element} The JSX element representing the root component.
+ */
 const Root = () => {
   return (
     <div className="container">
@@ -16,6 +19,9 @@ const ErrorPage = lazy(() => import("../pages/errorPage"));
 const Home = lazy(() => import("../pages/home"));
 const EmployeesList = lazy(() => import("../pages/employeesList"));
 
+/**
+ * The router configuration for your application.
+ */
 const router = createBrowserRouter([
   {
     path: "/",

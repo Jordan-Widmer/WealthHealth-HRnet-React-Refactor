@@ -1,3 +1,7 @@
+/**
+ * This component represents an error page for displaying a 404 error.
+ * @returns {JSX.Element} The JSX element representing the 404 error page.
+ */
 const ErrorPage = () => {
   return (
     <section>

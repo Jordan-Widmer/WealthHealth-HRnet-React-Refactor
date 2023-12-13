@@ -1,4 +1,7 @@
-// Departments data array
+/**
+ * Departments data array.
+ * @type {Array<Object>}
+ */
 const departments = [
   { label: "Sales" },
   { label: "Marketing" },
@@ -6,7 +9,10 @@ const departments = [
   { label: "Legal" },
 ];
 
-// States data array with name and abbreviation
+/**
+ * States data array with name and abbreviation.
+ * @type {Array<Object>}
+ */
 const states = [
   { name: "Alabama", abbreviation: "AL" },
   { name: "Alaska", abbreviation: "AK" },

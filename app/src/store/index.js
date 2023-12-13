@@ -9,12 +9,12 @@ const persistConfig = {
   storage,
 };
 
-// Persisting the employees reducer
-const persistedReducer = persistReducer(persistConfig, employeesReducer);
-
-// Store setup with the persisted reducer
+/**
+ * Redux store setup with persisted reducer.
+ * @type {import("@reduxjs/toolkit").EnhancedStore}
+ */
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: persistReducer(persistConfig, employeesReducer),
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -24,6 +24,10 @@ const store = configureStore({
 });
 
 // Instantiating the persistor for the store
+/**
+ * Redux persistor for the store.
+ * @type {import("redux-persist").Persistor}
+ */
 const persistor = persistStore(store);
 
 // Exporting store and persistor

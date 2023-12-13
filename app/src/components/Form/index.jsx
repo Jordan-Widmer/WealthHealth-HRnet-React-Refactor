@@ -6,13 +6,32 @@ import { addToEmployeesList } from "../../store/employeeDataSlice";
 import { states, departments } from "../../variables";
 import { useCallback } from "react";
 
+/**
+ * This component represents a form for creating an employee.
+ * @param {Object} props - The component's props.
+ * @param {Function} props.setModalIsOpen - A function to set the modal's open state.
+ * @returns {JSX.Element} The JSX element representing the employee creation form.
+ */
+
 const Form = ({ setModalIsOpen }) => {
   const dispatch = useDispatch();
-  const { register, handleSubmit, control, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
 
+  // Controller for the "state" input
   const { field: stateField } = useController({ name: "state", control });
+  
+  // Controller for the "department" input
   const { field: departmentField } = useController({ name: "department", control });
 
+  /**
+   * A callback function to handle form submission.
+   * @param {Object} data - The form data containing employee information.
+   */
   const subForm = useCallback((data) => {
     if (data.department && data.state) {
       setModalIsOpen(true);
@@ -64,7 +83,7 @@ const Form = ({ setModalIsOpen }) => {
             <label htmlFor="lastname">Last Name</label>
             <input
               className={errors.lastname ? "errorInput" : "input"}
-              placeholder="Enter first name"
+              placeholder="Enter last name"
               id="lastname"
               type="text"
               {...register("lastname", { required: "Please provide this field" })}
@@ -154,7 +173,7 @@ const Form = ({ setModalIsOpen }) => {
               <label htmlFor="zip-code">Zip Code</label>
               <input
                 className={errors.zipCode ? "errorInput" : "input"}
-                placeholder="Enter Zip code name"
+                placeholder="Enter Zip code"
                 id="zipCode"
                 type="text"
                 {...register("zipCode", {

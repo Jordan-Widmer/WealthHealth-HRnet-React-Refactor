@@ -5,6 +5,10 @@ import Modal from "../components/Modal";
 // Lazy load the Form component
 const Form = lazy(() => import("../components/Form"));
 
+/**
+ * This component represents the home page of your application.
+ * @returns {JSX.Element} The JSX element representing the home page.
+ */
 const Home = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
