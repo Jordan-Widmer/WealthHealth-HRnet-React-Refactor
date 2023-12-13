@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Lato-Regular";
-  src: url("/Lato-Regular.woff2") format("woff2"),
+  src: url("../public/Lato-Regular.ttf") format("woff2"),
     url("/Lato-Regular.woff") format("woff"),
     url("/Lato-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Lato-Bold";
-  src: url("/Lato-Bold.woff2") format("woff2"),
+  src: url("../public//Lato-Bold.ttf") format("woff2"),
     url("/Lato-Bold.woff") format("woff"),
     url("/Lato-Bold.ttf") format("truetype");
 }

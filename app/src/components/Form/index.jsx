@@ -1,17 +1,11 @@
 import "./styles.css";
+import React from 'react';
 import Select from "react-select";
 import { useForm, useController } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addToEmployeesList } from "../../store/employeeDataSlice";
 import { states, departments } from "../../variables";
 import { useCallback } from "react";
-
-/**
- * This component represents a form for creating an employee.
- * @param {Object} props - The component's props.
- * @param {Function} props.setModalIsOpen - A function to set the modal's open state.
- * @returns {JSX.Element} The JSX element representing the employee creation form.
- */
 
 const Form = ({ setModalIsOpen }) => {
   const dispatch = useDispatch();
@@ -22,16 +16,9 @@ const Form = ({ setModalIsOpen }) => {
     formState: { errors },
   } = useForm();
 
-  // Controller for the "state" input
   const { field: stateField } = useController({ name: "state", control });
-  
-  // Controller for the "department" input
   const { field: departmentField } = useController({ name: "department", control });
 
-  /**
-   * A callback function to handle form submission.
-   * @param {Object} data - The form data containing employee information.
-   */
   const subForm = useCallback((data) => {
     if (data.department && data.state) {
       setModalIsOpen(true);
@@ -65,7 +52,6 @@ const Form = ({ setModalIsOpen }) => {
       <h1 id="employee-form">Employee Form</h1>
       <div className="flexSection">
         <div>
-          {/* First Name */}
           <div className="labelContainer">
             <label htmlFor="firstname">First Name</label>
             <input
@@ -77,8 +63,7 @@ const Form = ({ setModalIsOpen }) => {
             />
             <p className="errorMessage">{errors.firstname?.message}</p>
           </div>
-
-          {/* Last Name */}
+          
           <div className="labelContainer">
             <label htmlFor="lastname">Last Name</label>
             <input
@@ -91,7 +76,6 @@ const Form = ({ setModalIsOpen }) => {
             <p className="errorMessage">{errors.lastname?.message}</p>
           </div>
 
-          {/* Birth Date */}
           <div className="labelContainer">
             <label htmlFor="birthdate">Birth Date</label>
             <input
@@ -104,7 +88,6 @@ const Form = ({ setModalIsOpen }) => {
             <p className="errorMessage">{errors.birthdate?.message}</p>
           </div>
 
-          {/* Start Date */}
           <div className="labelContainer">
             <label htmlFor="startDate">Start Date</label>
             <input
@@ -117,11 +100,9 @@ const Form = ({ setModalIsOpen }) => {
             <p className="errorMessage">{errors.startDate?.message}</p>
           </div>
         </div>
-
+        
         <div>
-          {/* Address Fieldset */}
           <fieldset className="fieldset">
-            {/* Street */}
             <div className="labelContainer">
               <label htmlFor="street">Street</label>
               <input
@@ -140,7 +121,6 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.street?.message}</p>
             </div>
 
-            {/* City */}
             <div className="labelContainer">
               <label htmlFor="city">City</label>
               <input
@@ -153,7 +133,6 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.city?.message}</p>
             </div>
 
-            {/* State */}
             <div className="labelContainer">
               <label htmlFor="state-select">State</label>
               <Select
@@ -168,7 +147,6 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.state?.message}</p>
             </div>
 
-            {/* Zip Code */}
             <div className="labelContainer">
               <label htmlFor="zip-code">Zip Code</label>
               <input
@@ -187,8 +165,7 @@ const Form = ({ setModalIsOpen }) => {
               <p className="errorMessage">{errors.zipCode?.message}</p>
             </div>
           </fieldset>
-
-          {/* Department */}
+          
           <div className="labelContainer">
             <label htmlFor="department-select">Department</label>
             <Select
@@ -202,7 +179,7 @@ const Form = ({ setModalIsOpen }) => {
           </div>
         </div>
       </div>
-
+      
       <button type="submit" className="submit">Create Employee!</button>
     </form>
   );
