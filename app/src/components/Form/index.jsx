@@ -1,11 +1,10 @@
 import "./styles.css";
-import React from 'react';
+import React, { useCallback } from 'react';
 import Select from "react-select";
 import { useForm, useController } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addToEmployeesList } from "../../store/employeeDataSlice";
 import { states, departments } from "../../variables";
-import { useCallback } from "react";
 
 const Form = ({ setModalIsOpen }) => {
   const dispatch = useDispatch();
@@ -14,7 +13,19 @@ const Form = ({ setModalIsOpen }) => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      firstname: '',
+      lastname: '',
+      birthdate: '',
+      startDate: '',
+      street: '',
+      city: '',
+      zipCode: '',
+      state: null,
+      department: null,
+    }
+  });
 
   const { field: stateField } = useController({ name: "state", control });
   const { field: departmentField } = useController({ name: "department", control });
@@ -110,13 +121,7 @@ const Form = ({ setModalIsOpen }) => {
                 placeholder="Enter street name"
                 id="street"
                 type="text"
-                {...register("street", {
-                  required: "Please provide this field",
-                  pattern: {
-                    value: /^\s*\S+(?:\s+\S+){2}/,
-                    message: "Please provide valid data",
-                  },
-                })}
+                {...register("street", { required: "Please provide this field" })}
               />
               <p className="errorMessage">{errors.street?.message}</p>
             </div>
@@ -148,19 +153,13 @@ const Form = ({ setModalIsOpen }) => {
             </div>
 
             <div className="labelContainer">
-              <label htmlFor="zip-code">Zip Code</label>
+              <label htmlFor="zipCode">Zip Code</label>
               <input
                 className={errors.zipCode ? "errorInput" : "input"}
                 placeholder="Enter Zip code"
                 id="zipCode"
                 type="text"
-                {...register("zipCode", {
-                  required: "Please provide this field",
-                  pattern: {
-                    value: /^[0-9]{5}(?:-[0-9]{4})?$/,
-                    message: "Please provide valid data",
-                  },
-                })}
+                {...register("zipCode", { required: "Please provide this field" })}
               />
               <p className="errorMessage">{errors.zipCode?.message}</p>
             </div>
