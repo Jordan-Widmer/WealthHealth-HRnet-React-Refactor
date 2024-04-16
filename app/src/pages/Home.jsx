@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState, Suspense, lazy } from "react";
 import Modal from 'modal_by_jsw';
+import PropTypes from 'prop-types';
 
 // Lazy load the Form component
 const Form = lazy(() => import("../components/Form"));
